@@ -5,6 +5,14 @@ export default {
   earlyAccess: true,
   schema: path.join(__dirname, 'schema.prisma'),
 
+  // For prisma db push
+  db: {
+    async url() {
+      return process.env.DATABASE_URL!
+    },
+  },
+
+  // For prisma migrate
   migrate: {
     async url() {
       return process.env.DATABASE_URL!
