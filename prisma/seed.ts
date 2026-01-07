@@ -1,7 +1,9 @@
 import { PrismaClient, ClientType, QuoteStatus, InvoiceStatus, PaymentMethod, MovementType } from '@prisma/client'
 import { Decimal } from '@prisma/client/runtime/library'
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({
+  datasourceUrl: process.env.DATABASE_URL,
+})
 
 async function main() {
   console.log('🌱 Starting database seed...')
